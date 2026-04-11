@@ -42,7 +42,7 @@ void solve()
             ch = u.second;
             continue;
         }
-        if(ch == u.second)""
+        if(ch == u.second)
         {
             no; return;
         }
