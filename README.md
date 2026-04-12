@@ -5,7 +5,7 @@ A dedicated repository for tracking my journey of solving **100 problems per rat
 ## 📊 Progress Tracker
 | Rating | Progress | Status |
 | :--- | :--- | :--- |
-| **800** | 21/100 | In Progess |
+| **800** | 27/100 | In Progess |
 | **900** | 0/100 | Upcoming  |
 | **1000** | 0/100 |  Upcoming |
 
