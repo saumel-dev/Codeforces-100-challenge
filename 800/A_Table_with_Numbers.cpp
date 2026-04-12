@@ -18,34 +18,18 @@ typedef double dl;
 
 void solve()
 {
-    int n, r, c;
-    cin >> n >> r >> c;
+    int n, h, l;
+    cin >> n >> h >> l;
     vector<int> v(n);
-    for (auto &u : v)
-        cin >> u;
-    vector<int> row;
-    vector<int> col;
-    for (int i = 0; i < n; i++)
+    for(auto &u : v) cin >> u;
+    if(h > l) swap(h, l);
+    int cnt_h = 0, cnt_l = 0;
+    for(int i = 0; i < n; i++)
     {
-        if (v[i] <= r)
-            row.push_back(v[i]);
-        if (v[i] <= c)
-            col.push_back(v[i]);
+        if(v[i] <= h) cnt_h++;
+        if(v[i] <= l) cnt_l++;
     }
-    sort(row.begin(), row.end());
-    sort(col.begin(), col.end());
-    int ans = 0;
-    
-    int temp = min(row.size(), col.size());
-    if(temp > n / 2)
-    {
-        cout << n / 2 << endl;
-    }
-    else
-    {
-        if(temp % 2 != 0) cout << (temp - 1) << endl;
-        else cout << temp << endl;
-    }
+    cout << min(cnt_h, (int) floor(cnt_l / 2)) << endl;
 }
 int main()
 {
