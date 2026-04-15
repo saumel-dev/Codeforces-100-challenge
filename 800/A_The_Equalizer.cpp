@@ -13,21 +13,37 @@ typedef double dl;
 #define yes cout << "YES" << endl
 #define no cout << "NO" << endl
 #define nl cout << endl
-#define mem(a,b) memset(a, b, sizeof(a))
+#define mem(a, b) memset(a, b, sizeof(a))
 #define check cout << "-__________________-" << endl
-
 
 void solve()
 {
-    int l, a, b; cin >> l >> a >> b;
-    ll ans = (a + b) % l, temp = 0, i = 2;
-    while(temp <= (5000 + (l - 1)))
+    int n, k;
+    cin >> n >> k;
+    vector<int> v(n);
+    for (auto &u : v)
+        cin >> u;
+    int sum = accumulate(v.begin(), v.end(), 0);
+    // cout << sum << endl;
+    // return;
+    if (n == 1)
     {
-        ans = max(ans, ((a + (b * i)) % l));
-        i++;
-        temp = (a + (b * i));
+        if (v[0] % 2 != 0 || k % 2 == 0)
+            yes;
+        else
+            no;
+        return;
     }
-    cout << ans << endl;
+    if (sum % 2 != 0)
+    {
+        yes;
+    }
+    else
+    {
+        if((n * k) % 2 == 0) yes;
+        else no;
+    }
+
 }
 int main()
 {
